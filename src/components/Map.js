@@ -1,5 +1,5 @@
 import React from "react";
-
+// import { calculateRouteFromAtoB } from "./route";
 class Map extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +24,8 @@ class Map extends React.Component {
 
   componentDidMount() {
     this.platform = new window.H.service.Platform(this.state);
-
+    // console.log("map", this.platform);
+    // calculateRouteFromAtoB(this.platform);
     var layer = this.platform.createDefaultLayers();
     var container = document.getElementById("here-map");
 
@@ -41,6 +42,7 @@ class Map extends React.Component {
   }
 
   render() {
+    console.log("saslaksalksa");
     return <div id="here-map" style={{ width: "100%", height: "400px", background: "grey" }} />;
   }
 }
