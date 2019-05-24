@@ -1,6 +1,6 @@
 export const type1 = [
   {
-    address: "#997, dsdjk, shjds",
+    address: "#997, Franklinn Rd",
     pin: "123456",
     geoloc: "lat: 23.01, long: 64.83",
     dimension: "135 * 120",
@@ -9,7 +9,7 @@ export const type1 = [
     comments: "Handle with care"
   },
   {
-    address: "#997, dsdjk, shjds",
+    address: "#12, Baramount St",
     pin: "123456",
     geoloc: "lat: 23.01, long: 64.83",
     dimension: "135 * 120",
@@ -18,7 +18,7 @@ export const type1 = [
     comments: "Handle with care"
   },
   {
-    address: "#997, dsdjk, shjds",
+    address: "#73, Queen St",
     pin: "123456",
     geoloc: "lat: 23.01, long: 64.83",
     dimension: "135 * 120",
@@ -30,7 +30,7 @@ export const type1 = [
 
 export const type2 = [
   {
-    address: "#997, dsdjk, shjds",
+    address: "#997, Franklinn Rd",
     pin: "123456",
     geoloc: "lat: 23.01, long: 64.83",
     dimension: "135 * 120",
@@ -39,7 +39,7 @@ export const type2 = [
     comments: "Handle with care"
   },
   {
-    address: "#997, dsdjk, shjds",
+    address: "#12, Baramount St",
     pin: "123456",
     geoloc: "lat: 23.01, long: 64.83",
     dimension: "135 * 120",
@@ -48,7 +48,7 @@ export const type2 = [
     comments: "Handle with care"
   },
   {
-    address: "#997, dsdjk, shjds",
+    address: "#73, Queen St",
     pin: "123456",
     geoloc: "lat: 23.01, long: 64.83",
     dimension: "135 * 120",
@@ -60,7 +60,7 @@ export const type2 = [
 
 export const type3 = [
   {
-    address: "#997, dsdjk, shjds",
+    address: "#997, Franklinn Rd",
     pin: "123456",
     geoloc: "lat: 23.01, long: 64.83",
     dimension: "135 * 120",
@@ -69,7 +69,7 @@ export const type3 = [
     comments: "Handle with care"
   },
   {
-    address: "#997, dsdjk, shjds",
+    address: "#12, Baramount St",
     pin: "123456",
     geoloc: "lat: 23.01, long: 64.83",
     dimension: "135 * 120",
@@ -78,7 +78,7 @@ export const type3 = [
     comments: "Handle with care"
   },
   {
-    address: "#997, dsdjk, shjds",
+    address: "#73, Queen St",
     pin: "123456",
     geoloc: "lat: 23.01, long: 64.83",
     dimension: "135 * 120",

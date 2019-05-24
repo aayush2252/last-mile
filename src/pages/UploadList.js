@@ -29,12 +29,15 @@ class UploadList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      file: null
+      file: null,
+      transport: "",
+      parcelQuantity: ""
     };
   }
 
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.value });
+  handleChange = name => {
+    console.log("handlechange", name);
+    this.setState({ transport: name });
   };
 
   onFileUpload = e => {
@@ -43,7 +46,7 @@ class UploadList extends Component {
     this.props.history.push("/insight");
   };
   render() {
-    console.log("state in upload", this.state.file);
+    console.log("state in upload", this.state);
     const { classes } = this.props;
     return (
       <div className={classes.root}>
@@ -53,8 +56,8 @@ class UploadList extends Component {
               <FormControl className={classes.textField}>
                 <InputLabel htmlFor="age-simple">Transport Type</InputLabel>
                 <Select
-                  value={this.state.age}
-                  onChange={this.handleChange}
+                  value={this.state.transport}
+                  onChange={e => this.handleChange(e.target.value)}
                   inputProps={{
                     name: "age",
                     id: "age-simple"
@@ -62,31 +65,31 @@ class UploadList extends Component {
                   <MenuItem value="">
                     <em>None</em>
                   </MenuItem>
-                  <MenuItem value={30}>Chota Hathi - 1.5 MT</MenuItem>
-                  <MenuItem value={30}>Bolero - 2MT</MenuItem>
-                  <MenuItem value={10}>TATA 407 - 2.5MT</MenuItem>
-                  <MenuItem value={20}>Canter- 3.5MT</MenuItem>
-                  <MenuItem value={30}>LPT-709 - 4.5 MT</MenuItem>
-                  <MenuItem value={30}>LPT-709 - 4.5 MT</MenuItem>
-                  <MenuItem value={30}>Full Truck - 9 MT</MenuItem>
+                  <MenuItem value="Chota Hathi - 1.5 MT">Chota Hathi - 1.5 MT</MenuItem>
+                  <MenuItem value="Bolero - 2MT">Bolero - 2MT</MenuItem>
+                  <MenuItem value="TATA 407 - 2.5MT">TATA 407 - 2.5MT</MenuItem>
+                  <MenuItem value="Canter- 3.5MT">Canter- 3.5MT</MenuItem>
+                  <MenuItem value="LPT-709 - 4.5 MT">LPT-709 - 4.5 MT</MenuItem>
+                  <MenuItem value="LPT-709 - 4.5 MT ">LPT-709 - 4.5 MT</MenuItem>
+                  <MenuItem value="Full Truck - 9 MT">Full Truck - 9 MT</MenuItem>
                 </Select>
               </FormControl>
             </div>
             <div>
               <FormControl className={classes.textField}>
-                <InputLabel htmlFor="age-simple">Break</InputLabel>
+                <InputLabel htmlFor="break-simple">Break</InputLabel>
                 <Select
-                  value={this.state.age}
-                  onChange={this.handleChange}
+                  value={this.state.break}
+                  onChange={e => this.setState({ break: e.target.value })}
                   inputProps={{
-                    name: "age",
-                    id: "age-simple"
+                    name: "break",
+                    id: "break-simple"
                   }}>
                   <MenuItem value="">
                     <em>None</em>
                   </MenuItem>
-                  <MenuItem value={30}>Lunch</MenuItem>
-                  <MenuItem value={30}>Tea</MenuItem>
+                  <MenuItem value="Lunch">Lunch</MenuItem>
+                  <MenuItem value="Tea">Tea</MenuItem>
                 </Select>
               </FormControl>
             </div>
@@ -96,7 +99,7 @@ class UploadList extends Component {
                 label="Number of transport of particular type"
                 className={classes.textField}
                 value={this.state.parcelQuantity}
-                onChange={this.handleChange("parcelQuantity")}
+                onChange={e => this.setState({ parcelQuantity: e.target.value })}
                 margin="normal"
               />
             </div>
@@ -106,7 +109,7 @@ class UploadList extends Component {
                 label="Time Duration"
                 className={classes.textField}
                 value={this.state.time}
-                onChange={this.handleChange("time")}
+                onChange={e => this.setState({ time: e.target.value })}
                 margin="normal"
               />
             </div>

@@ -6,8 +6,8 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import { Link } from "react-router-dom";
 import { type1, type2, type3 } from "../config/data";
+import Modal from "../components/Modal";
 
 const styles = theme => ({
   root: {
@@ -23,8 +23,15 @@ const styles = theme => ({
 class Insights extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      modalOpen: false
+    };
   }
+
+  openModal = () => this.setState({ modalOpen: true });
+
+  closeModal = () => this.setState({ modalOpen: false });
+
   render() {
     const { classes } = this.props;
     return (
@@ -38,7 +45,9 @@ class Insights extends Component {
 
         <Paper style={{ padding: "40px", marginTop: "50px" }}>
           <div style={{ textAlign: "right" }}>
-            <Link to="/map">Get Directions</Link>
+            <a href="javascript:void(0)" onClick={this.openModal}>
+              Share with Driver
+            </a>
           </div>
           <h1>Vehicle Type: TATA 407</h1>
           <h3>Duration: 9hrs</h3>
@@ -77,7 +86,9 @@ class Insights extends Component {
 
         <Paper style={{ padding: "40px", marginTop: "50px" }}>
           <div style={{ textAlign: "right" }}>
-            <Link to="/map">Get Directions</Link>
+            <a href="javascript:void(0)" onClick={this.openModal}>
+              Share with Driver
+            </a>
           </div>
           <h1>Vehicle Type: Chota Hathi</h1>
           <h3>Duration: 9hrs</h3>
@@ -116,7 +127,9 @@ class Insights extends Component {
 
         <Paper style={{ padding: "40px", marginTop: "50px" }}>
           <div style={{ textAlign: "right" }}>
-            <Link to="/map">Get Directions</Link>
+            <a href="javascript:void(0)" onClick={this.openModal}>
+              Share with Driver
+            </a>
           </div>
           <h1>Vehicle Type: Bikes</h1>
           <h3>Duration: 9hrs</h3>
@@ -152,6 +165,8 @@ class Insights extends Component {
             </TableBody>
           </Table>
         </Paper>
+
+        <Modal close={this.closeModal} openState={this.state.modalOpen} />
       </div>
     );
   }

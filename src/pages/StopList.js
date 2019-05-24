@@ -8,6 +8,7 @@ import StepContent from "@material-ui/core/StepContent";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -28,7 +29,7 @@ const styles = theme => ({
 });
 
 function getSteps() {
-  return ["Marc: #10, Urban Estate, Ludhiana", "Aman: #221, Sector-5, Chd", "Ruby: #123, Sector-10, Mohali"];
+  return ["Marc: #997, Franklinn Rd", "Robin: #12, Baramount St", "Ruby: #73, Queen St"];
 }
 
 function getStepContent(step) {
@@ -36,25 +37,25 @@ function getStepContent(step) {
     case 0:
       return (
         <div>
-          <div>Full Address: Loeere sdsk dsnkds nds</div>
-          <a>Directions</a>
-          <a>More Info</a>
+          <div>Full Address: #997, Franklinn Rd</div>
+          {/* <a>Directions</a> */}
+          <a href="javascript:void(0)">More Info</a>
         </div>
       );
     case 1:
       return (
         <div>
-          <div>Full Address: Loeere sdsk dsnkds nds</div>
-          <a>Directions</a>
-          <a>More Info</a>
+          <div>Full Address: #12, Baramount St</div>
+          {/* <a>Directions</a> */}
+          <a href="javascript:void(0)">More Info</a>
         </div>
       );
     case 2:
       return (
         <div>
-          <div>Full Address: Loeere sdsk dsnkds nds</div>
-          <a>Directions</a>
-          <a>More Info</a>
+          <div>Full Address: #73, Queen St</div>
+          {/* <a>Directions</a> */}
+          <a href="javascript:void(0)">More Info</a>
         </div>
       );
     default:
@@ -107,9 +108,11 @@ class VerticalLinearStepper extends React.Component {
                       <Button variant="contained" color="primary" onClick={this.handleNext} className={classes.button}>
                         {activeStep === steps.length - 1 ? "Finish" : "Next"}
                       </Button>
-                      <Button variant="contained" color="secondary" className={classes.button}>
-                        Re-Optimize
-                      </Button>
+                      <Link to="/map">
+                        <Button variant="contained" color="secondary" className={classes.button}>
+                          Re-Optimize
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </StepContent>
@@ -118,7 +121,7 @@ class VerticalLinearStepper extends React.Component {
           </Stepper>
         </Paper>
         {activeStep === steps.length && (
-          <Paper square elevation={0} className={classes.resetContainer}>
+          <Paper style={{ marginTop: "20px" }} square elevation={0} className={classes.resetContainer}>
             <Typography>All steps completed - you&apos;re finished</Typography>
             <Button onClick={this.handleReset} className={classes.button}>
               Reset

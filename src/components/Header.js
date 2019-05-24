@@ -34,9 +34,9 @@ function Header(props) {
           <Typography variant="h6" color="inherit" className={classes.grow}>
             RouteOptimistic
           </Typography>
-          <Link to="/stoplist">
+          {/* <Link to="/stoplist">
             <Button color="inherit">Stop List</Button>
-          </Link>
+          </Link> */}
         </Toolbar>
       </AppBar>
     </div>
