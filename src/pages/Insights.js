@@ -6,6 +6,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
+import { Link } from "react-router-dom";
 import { type1, type2, type3 } from "../config/data";
 
 const styles = theme => ({
@@ -28,7 +29,17 @@ class Insights extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Paper style={{ padding: "40px" }}>
+        <Paper style={{ padding: "40px", marginTop: "50px" }}>
+          <h1>Insights</h1>
+          <h4>Remove 1 vehicle and increase the capacity to 98%</h4>
+          <h4>Cost Saving - Rs 100 per day</h4>
+          <h4>Duration - extra 1 hour per vehicle</h4>
+        </Paper>
+
+        <Paper style={{ padding: "40px", marginTop: "50px" }}>
+          <div style={{ textAlign: "right" }}>
+            <Link to="/map">Get Directions</Link>
+          </div>
           <h1>Vehicle Type: TATA 407</h1>
           <h3>Duration: 9hrs</h3>
           <h3>Capacity Occupied: 90%</h3>
@@ -65,6 +76,9 @@ class Insights extends Component {
         </Paper>
 
         <Paper style={{ padding: "40px", marginTop: "50px" }}>
+          <div style={{ textAlign: "right" }}>
+            <Link to="/map">Get Directions</Link>
+          </div>
           <h1>Vehicle Type: Chota Hathi</h1>
           <h3>Duration: 9hrs</h3>
           <h3>Capacity Occupied: 90%</h3>
@@ -101,6 +115,9 @@ class Insights extends Component {
         </Paper>
 
         <Paper style={{ padding: "40px", marginTop: "50px" }}>
+          <div style={{ textAlign: "right" }}>
+            <Link to="/map">Get Directions</Link>
+          </div>
           <h1>Vehicle Type: Bikes</h1>
           <h3>Duration: 9hrs</h3>
           <h3>Capacity Occupied: 90%</h3>
@@ -134,13 +151,6 @@ class Insights extends Component {
               ))}
             </TableBody>
           </Table>
-        </Paper>
-
-        <Paper style={{ padding: "40px", marginTop: "50px" }}>
-          <h1>Insights</h1>
-          <h4>Remove 1 vehicle and increase the capacity to 98%</h4>
-          <h4>Cost Saving - Rs 100 per day</h4>
-          <h4>Duration - extra 1 hour per vehicle</h4>
         </Paper>
       </div>
     );

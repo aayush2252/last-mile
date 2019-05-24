@@ -11,9 +11,9 @@ const Insights = lazy(() => import("./pages/Insights"));
 export default (
   <ErrorBoundary>
     <Switch>
-      <Route exact path="/" component={props => <MapRoute {...props} />} />
+      <Route exact path="/" component={props => <UploadList {...props} />} />
       <Route exact path="/stoplist" component={props => <StopList {...props} />} />
-      <Route exact path="/form" component={props => <UploadList {...props} />} />
+      <Route exact path="/map" component={props => <MapRoute {...props} />} />
       <Route exact path="/track" component={props => <CustomerTracking {...props} />} />
       <Route exact path="/insight" component={props => <Insights {...props} />} />
     </Switch>

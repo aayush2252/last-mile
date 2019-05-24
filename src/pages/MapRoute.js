@@ -55,7 +55,7 @@ class MapRoute extends Component {
     return (
       <div className="App">
         <Map app_id="LgSX5H49ey4TlUS7lCkP" app_code="xRmuALQVNJKr_-_5Byrrmg" lat="42.345978" lng="-83.0405" zoom="12" theme="normal.day" />
-        <StartLocation
+        {/* <StartLocation
           lat={this.state.start.lat}
           lng={this.state.start.lng}
           key="MyLocator"
@@ -66,7 +66,7 @@ class MapRoute extends Component {
         <Wrapper>
           <p>Search for nearby places.</p>
           <PlacePlanner app_id={this.state.here.app_id} app_code={this.state.here.app_code} lat={this.state.start.lat} lng={this.state.start.lng} />
-        </Wrapper>
+        </Wrapper> */}
       </div>
     );
   }

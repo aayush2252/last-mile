@@ -7,6 +7,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
+import { withRouter } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -27,13 +28,22 @@ const styles = theme => ({
 class UploadList extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      file: null
+    };
   }
 
   handleChange = name => event => {
     this.setState({ [name]: event.target.value });
   };
+
+  onFileUpload = e => {
+    // console.log("skdj", e.target.files[0]);
+    this.setState({ file: e.target.files[0] });
+    this.props.history.push("/insight");
+  };
   render() {
+    console.log("state in upload", this.state.file);
     const { classes } = this.props;
     return (
       <div className={classes.root}>
@@ -83,7 +93,7 @@ class UploadList extends Component {
             <div>
               <TextField
                 id="parcel"
-                label="Number of Parcels"
+                label="Number of transport of particular type"
                 className={classes.textField}
                 value={this.state.parcelQuantity}
                 onChange={this.handleChange("parcelQuantity")}
@@ -102,7 +112,7 @@ class UploadList extends Component {
             </div>
 
             <div style={{ marginTop: "20px" }}>
-              <input accept="image/*" className={classes.input} id="contained-button-file" multiple type="file" />
+              <input accept="image/*" onChange={this.onFileUpload} className={classes.input} id="contained-button-file" multiple type="file" />
               <label htmlFor="contained-button-file">
                 <Button variant="contained" component="span">
                   Upload StopList
@@ -116,4 +126,4 @@ class UploadList extends Component {
   }
 }
 
-export default withStyles(styles)(UploadList);
+export default withRouter(withStyles(styles)(UploadList));

@@ -68,9 +68,14 @@ class CustomerTracking extends React.Component {
           </div>
 
           <div style={{ marginTop: "15px" }}>Time left to get the Delivery</div>
-          {/* <Button style={{ marginTop: "20px" }} variant="contained" color="primary" className={classes.button}>
-            Get Status
-          </Button> */}
+          <div>
+            <Button style={{ marginTop: "20px" }} variant="contained" color="primary" className={classes.button}>
+              Share your location
+            </Button>
+            <Button style={{ marginTop: "20px", marginLeft: "20px" }} variant="contained" color="primary" className={classes.button}>
+              Change the delivery slot
+            </Button>
+          </div>
         </Paper>
       </div>
     );
