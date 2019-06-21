@@ -29,7 +29,7 @@ const styles = theme => ({
 });
 
 function getSteps() {
-  return ["Marc: #997, Franklinn Rd", "Robin: #12, Baramount St", "Ruby: #73, Queen St"];
+  return ["Thane Station(W)", "Lala Tulsiram Udyan.", "Shri Durga Snacks"];
 }
 
 function getStepContent(step) {
@@ -37,7 +37,7 @@ function getStepContent(step) {
     case 0:
       return (
         <div>
-          <div>Full Address: #997, Franklinn Rd</div>
+          <div>Full Address: #997, Thane Station(W)</div>
           {/* <a>Directions</a> */}
           <a href="javascript:void(0)">More Info</a>
         </div>
@@ -45,7 +45,7 @@ function getStepContent(step) {
     case 1:
       return (
         <div>
-          <div>Full Address: #12, Baramount St</div>
+          <div>Full Address: #12, Lala Tulsiram Udyan</div>
           {/* <a>Directions</a> */}
           <a href="javascript:void(0)">More Info</a>
         </div>
@@ -53,7 +53,7 @@ function getStepContent(step) {
     case 2:
       return (
         <div>
-          <div>Full Address: #73, Queen St</div>
+          <div>Full Address: #73, Shri Durga Snacks</div>
           {/* <a>Directions</a> */}
           <a href="javascript:void(0)">More Info</a>
         </div>
@@ -68,11 +68,11 @@ class VerticalLinearStepper extends React.Component {
     activeStep: 0
   };
 
-  // componentDidMount() {
-  //   const path = this.props.location.pathname;
-  //   const cust = path.split("/");
-  //   this.setState({ activeStep: cust[2].toString() });
-  // }
+  componentDidMount() {
+    const path = this.props.location.pathname;
+    const cust = path.split("/");
+    cust.length >= 3 && this.setState({ activeStep: cust[2].toString() });
+  }
   handleNext = () => {
     this.setState(state => ({
       activeStep: state.activeStep + 1
@@ -95,11 +95,11 @@ class VerticalLinearStepper extends React.Component {
     const { classes } = this.props;
     const steps = getSteps();
     const { activeStep } = this.state;
-
+    // console.log("sajsak", activeStep);
     return (
       <div className={classes.root}>
         <Paper>
-          <Stepper activeStep={activeStep} orientation="vertical">
+          <Stepper activeStep={parseInt(activeStep)} orientation="vertical">
             {steps.map((label, index) => (
               <Step key={label}>
                 <StepLabel>{label}</StepLabel>

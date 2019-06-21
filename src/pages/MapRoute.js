@@ -5,6 +5,7 @@ import StartLocation from "../components/StartLocation";
 import PlacePlanner from "../components/PlacePlanner";
 import Map from "../components/Map";
 import { Link } from "react-router-dom";
+import CustomTextField from "../components/CustomTextField";
 
 const Wrapper = styled.section`
   padding: 1em;
@@ -16,13 +17,14 @@ class MapRoute extends Component {
 
     this.state = {
       here: {
-        app_id: "LgSX5H49ey4TlUS7lCkP",
-        app_code: "xRmuALQVNJKr_-_5Byrrmg"
+        app_id: "bpvUJEyQdIwIjwNt44Mk",
+        app_code: "VrWI7IaJQ2uPTvOs-s1cVg"
       },
       start: {
-        lat: 30.901,
-        lng: 75.8573
-      }
+        lat: 19.122481,
+        lng: 73.0178634999
+      },
+      searchText: ""
     };
 
     this.onLocate = this.onLocate.bind(this);
@@ -44,6 +46,10 @@ class MapRoute extends Component {
     });
   }
 
+  handleSearchTextChange = name => event => {
+    this.setState({ [name]: event.target.value });
+  };
+
   // User manually changing latitude or longitude
   onLocationChanged(e) {
     e.preventDefault();
@@ -54,14 +60,30 @@ class MapRoute extends Component {
   }
 
   render() {
+    console.log("location", this.state);
     return (
       <div className="App">
-        <Map app_id="LgSX5H49ey4TlUS7lCkP" app_code="xRmuALQVNJKr_-_5Byrrmg" lat="42.345978" lng="-83.0405" zoom="12" theme="normal.day" />
+        <Map
+          app_id="LgSX5H49ey4TlUS7lCkP"
+          app_code="xRmuALQVNJKr_-_5Byrrmg"
+          lat={this.state.start.lat}
+          lng={this.state.start.lng}
+          zoom="12"
+          theme="normal.day"
+        />
         <Link to="/sign">
           <Button color="primary" variant="contained" component="span" style={{ position: "fixed", bottom: 0, left: 0, right: 0 }}>
             Stop & Deliver Parcel
           </Button>
         </Link>
+
+        {/* <CustomTextField
+          value={this.state.searchText}
+          handleDestinationsChange={this.handleSearchTextChange}
+          id="search"
+          name="searchText"
+          label="Enter the Location"
+        /> */}
         {/* <StartLocation
           lat={this.state.start.lat}
           lng={this.state.start.lng}

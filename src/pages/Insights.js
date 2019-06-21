@@ -57,7 +57,7 @@ class Insights extends Component {
           </div>
           <h3>Vehicle Type: TATA 407</h3>
           <h3>Duration: 9hrs</h3>
-          <h3>Capacity Occupied: 90%</h3>
+          <h3>Capacity Occupied: 70%</h3>
           <div className={classes.tableContainer}>
             <Table className={classes.table}>
               <TableHead>
@@ -100,7 +100,7 @@ class Insights extends Component {
           </div>
           <h3>Vehicle Type: Chota Hathi</h3>
           <h3>Duration: 9hrs</h3>
-          <h3>Capacity Occupied: 90%</h3>
+          <h3>Capacity Occupied: 60%</h3>
           <div className={classes.tableContainer}>
             <Table className={classes.table}>
               <TableHead>

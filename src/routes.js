@@ -9,6 +9,7 @@ const CustomerTracking = lazy(() => import("./pages/CustomerTracking"));
 const Insights = lazy(() => import("./pages/Insights"));
 const SignaturePage = lazy(() => import("./pages/SignaturePage"));
 const FleetOptimization = lazy(() => import("./pages/fleetOptimization"));
+const MarketPlace = lazy(() => import("./pages/MarketPlace"));
 
 export default (
   <ErrorBoundary>
@@ -21,6 +22,7 @@ export default (
       <Route exact path="/insight" component={props => <Insights {...props} />} />
       <Route exact path="/sign" component={props => <SignaturePage {...props} />} />
       <Route exact path="/optimization" component={props => <FleetOptimization {...props} />} />
+      <Route exact path="/market" component={props => <MarketPlace {...props} />} />
     </Switch>
   </ErrorBoundary>
 );

@@ -33,11 +33,11 @@ class SignaturePage extends Component {
     return (
       <div style={{ marginTop: "85px" }}>
         <div className="container signature-container">
-          <div class="row">
-            <div class="col-md-12">
+          <div className="row">
+            <div className="col-md-12">
               <h1> {this.props.title}</h1>
             </div>
-            <div class="col-md-12">
+            <div className="col-md-12">
               <SignatureCanvas
                 penColor="green"
                 ref={ref => {
@@ -47,8 +47,8 @@ class SignaturePage extends Component {
               />
             </div>
           </div>
-          <div class="row" ref="btnWrapper">
-            <div class="col-sm-6">
+          <div className="row" ref="btnWrapper">
+            <div className="col-sm-6">
               <div ref="btnSign" onClick={this.handleClick} className="btn btn-success pull-left">
                 Submit
               </div>{" "}
@@ -64,7 +64,7 @@ class SignaturePage extends Component {
           Parcel Delivered Successfully
         </CustomSnackbar>
         {submit && (
-          <Link to="/stoplist/2">
+          <Link to="/stoplist/1">
             <Button color="primary" variant="contained" component="span" style={{ position: "fixed", bottom: 0, left: 0, right: 0 }}>
               Go to next customer
             </Button>

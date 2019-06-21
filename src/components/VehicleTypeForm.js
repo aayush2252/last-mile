@@ -59,6 +59,7 @@ class VehicleTypeForm extends Component {
                   <MenuItem value="">
                     <em>None</em>
                   </MenuItem>
+                  <MenuItem value="Bikes">Bikes</MenuItem>
                   <MenuItem value="Chota Hathi - 1.5 MT">Chota Hathi - 1.5 MT</MenuItem>
                   <MenuItem value="Bolero - 2MT">Bolero - 2MT</MenuItem>
                   <MenuItem value="TATA 407 - 2.5MT">TATA 407 - 2.5MT</MenuItem>

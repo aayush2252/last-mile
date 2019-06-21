@@ -12,10 +12,10 @@ class Map extends React.Component {
     this.state = {
       app_id: props.app_id,
       app_code: props.app_code,
-      // center: {
-      //   lat: props.lat,
-      //   lng: props.lng
-      // },
+      center: {
+        lat: props.lat,
+        lng: props.lng
+      },
       zoom: props.zoom,
       theme: props.theme,
       style: props.style
@@ -31,7 +31,7 @@ class Map extends React.Component {
   }
 
   componentDidMount() {
-    this.props.sequence();
+    this.props.sequence({ vehicle: "car", improveFor: "time" });
   }
 
   renderMap = waypoint => {
@@ -43,7 +43,7 @@ class Map extends React.Component {
     var container = document.getElementById("here-map");
 
     var map = new window.H.Map(container, layer.normal.map, {
-      center: { lat: 52.51, lng: 13.4 },
+      center: this.state.center,
       zoom: this.state.zoom
     });
 
@@ -58,16 +58,16 @@ class Map extends React.Component {
       // The routing mode:
       mode: "fastest;pedestrian",
       // The start point of the route:
-      waypoint0: "-36.8414,174.76474",
-      waypoint1: "-36.84234,174.76315",
-      waypoint2: "-36.84314,174.76681",
-      waypoint3: "-36.849635,174.7701",
-      waypoint4: "-36.85015,174.76912",
-      waypoint5: "-36.85057,174.76792",
-      waypoint6: "-36.851082,174.7652",
-      waypoint7: "-36.85248,174.76362",
-      waypoint8: "-36.84827,174.76223",
-      waypoint9: "-36.83908,174.74169",
+      waypoint0: "19.126856,73.004379",
+      waypoint1: "19.1867685,72.9750417",
+      // waypoint2: "19.1867685,72.9750417",
+      // waypoint3: "19.1877466,72.972719",
+      // waypoint4: "19.1871391,72.9685715",
+      // waypoint5: "19.1759002,72.9452778",
+      // waypoint6: "19.1421305,72.9667101",
+      // waypoint7: "19.2638124,73.1121202",
+      // waypoint8: "19.1445261,73.1316009",
+      // waypoint9: "19.1243057,73.0035507",
       // waypoint0: "geo!50.1120423728813,8.68340740740811",
       // // The end point of the route:
       // waypoint1: "geo!52.5309916298853,13.3846220493377",
@@ -96,29 +96,21 @@ class Map extends React.Component {
           linestring.pushLatLngAlt(parts[0], parts[1]);
         });
 
-        // Retrieve the mapped positions of the requested waypoints:
-        startPoint = route.waypoint[0].mappedPosition;
-        endPoint = route.waypoint[1].mappedPosition;
+        var waypoints = route.waypoint;
+        waypoints.forEach(item => {
+          const { mappedPosition, label } = item || {};
+          const { latitude, longitude } = mappedPosition || {};
+          var mark = new window.H.map.Marker({ lat: latitude, lng: longitude });
+          map.addObject(mark);
+        });
 
         // Create a polyline to display the route:
         var routeLine = new window.H.map.Polyline(linestring, {
           style: { strokeColor: "blue", lineWidth: 10 }
         });
 
-        // Create a marker for the start point:
-        var startMarker = new window.H.map.Marker({
-          lat: startPoint.latitude,
-          lng: startPoint.longitude
-        });
-
-        // Create a marker for the end point:
-        var endMarker = new window.H.map.Marker({
-          lat: endPoint.latitude,
-          lng: endPoint.longitude
-        });
-
         // Add the route polyline and the two markers to the map:
-        map.addObjects([routeLine, startMarker, endMarker]);
+        map.addObjects([routeLine]);
 
         // Set the map's viewport to make the whole route visible:
         map.setViewBounds(routeLine.getBounds());

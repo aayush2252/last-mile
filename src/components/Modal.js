@@ -6,6 +6,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import { Link } from "react-router-dom";
 
 function Modal(props) {
   return (
@@ -20,9 +21,9 @@ function Modal(props) {
           <Button onClick={props.close} color="primary">
             Cancel
           </Button>
-          <Button onClick={props.close} color="primary">
-            Share
-          </Button>
+          <Link to="/stoplist">
+            <Button color="primary">Share</Button>
+          </Link>
         </DialogActions>
       </Dialog>
     </div>
