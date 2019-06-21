@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-// import simpleReducer from "./simpleReducer";
+import sequence from "./sequence";
 
 export default combineReducers({
-  //   simpleReducer
+  sequence
 });

@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { sequence } from "../actions/sequence";
 // import { calculateRouteFromAtoB } from "./route";
 class Map extends React.Component {
   constructor(props) {
@@ -22,7 +24,19 @@ class Map extends React.Component {
 
   // TODO: Add theme selection discussed later HERE
 
+  UNSAFE_componentWillReceiveProps(np) {
+    if (this.props.waypoints !== np.waypoints) {
+      this.renderMap(np.waypoints);
+    }
+  }
+
   componentDidMount() {
+    this.props.sequence();
+  }
+
+  renderMap = waypoint => {
+    console.log("props", waypoint);
+
     this.platform = new window.H.service.Platform(this.state);
 
     var layer = this.platform.createDefaultLayers();
@@ -42,7 +56,7 @@ class Map extends React.Component {
     // Create the parameters for the routing request:
     var routingParameters = {
       // The routing mode:
-      mode: "fastest;car",
+      mode: "fastest;pedestrian",
       // The start point of the route:
       waypoint0: "-36.8414,174.76474",
       waypoint1: "-36.84234,174.76315",
@@ -120,14 +134,25 @@ class Map extends React.Component {
     router.calculateRoute(routingParameters, onResult, function(error) {
       alert(error.message);
     });
-  }
+  };
 
   render() {
     return <div id="here-map" style={{ width: "100%", height: "600px", background: "grey" }} />;
   }
 }
 
-export default Map;
+const mapStateToProps = state => {
+  const { sequence } = state || {};
+  const { waypoints } = sequence || {};
+  return {
+    waypoints
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { sequence }
+)(Map);
 
 // start: "52.05386,-0.79012",
 //       destination1: "51.97726,-0.71706",

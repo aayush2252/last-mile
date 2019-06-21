@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Button from "@material-ui/core/Button";
 import StartLocation from "../components/StartLocation";
 import PlacePlanner from "../components/PlacePlanner";
 import Map from "../components/Map";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.section`
   padding: 1em;
@@ -55,6 +57,11 @@ class MapRoute extends Component {
     return (
       <div className="App">
         <Map app_id="LgSX5H49ey4TlUS7lCkP" app_code="xRmuALQVNJKr_-_5Byrrmg" lat="42.345978" lng="-83.0405" zoom="12" theme="normal.day" />
+        <Link to="/sign">
+          <Button color="primary" variant="contained" component="span" style={{ position: "fixed", bottom: 0, left: 0, right: 0 }}>
+            Stop & Deliver Parcel
+          </Button>
+        </Link>
         {/* <StartLocation
           lat={this.state.start.lat}
           lng={this.state.start.lng}

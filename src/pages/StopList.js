@@ -12,9 +12,9 @@ import { Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {
-    width: "50%",
+    width: "90%",
     margin: "0 auto",
-    marginTop: "50px"
+    marginTop: "85px"
   },
   button: {
     marginTop: theme.spacing.unit,
@@ -68,6 +68,11 @@ class VerticalLinearStepper extends React.Component {
     activeStep: 0
   };
 
+  // componentDidMount() {
+  //   const path = this.props.location.pathname;
+  //   const cust = path.split("/");
+  //   this.setState({ activeStep: cust[2].toString() });
+  // }
   handleNext = () => {
     this.setState(state => ({
       activeStep: state.activeStep + 1
