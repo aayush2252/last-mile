@@ -76,11 +76,11 @@ class CustomerTracking extends React.Component {
             Go Back{" "}
           </Button>
           <div style={{ marginLeft: "50px" }}> */}
-          <Link to="/stoplist/1">
+          {/* <Link to="/stoplist/1">
             <Button variant="contained" color="primary">
               Go to next Route{" "}
             </Button>
-          </Link>
+          </Link> */}
           {/* </div> */}
         </div>
         <Paper style={{ padding: "10px" }}>

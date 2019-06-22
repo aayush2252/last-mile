@@ -3,6 +3,7 @@ import SignatureCanvas from "react-signature-canvas";
 import CustomSnackbar from "../components/CustomSnackbar";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
+import Rating from "../components/Rating";
 
 class SignaturePage extends Component {
   state = { trimmedDataURL: null, open: false, submit: false };
@@ -58,6 +59,8 @@ class SignaturePage extends Component {
               </div>
             </div>
           </div>
+          <h2 style={{ marginTop: "50px" }}>Please rate our service</h2>
+          <Rating />
         </div>
         {trimmedDataURL ? <img src={trimmedDataURL} /> : null}
         <CustomSnackbar open={open} handleClose={this.handleClose}>

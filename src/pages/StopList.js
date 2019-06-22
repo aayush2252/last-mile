@@ -29,7 +29,7 @@ const styles = theme => ({
 });
 
 function getSteps() {
-  return ["Thane Station(W)", "Lala Tulsiram Udyan.", "Shri Durga Snacks"];
+  return ["Thane Station(W)", "Lala Tulsiram Udyan.", "Shri Durga Snacks", "Fortis Hiranandani Hospital", "Shiv Shankar Temple"];
 }
 
 function getStepContent(step) {
@@ -54,6 +54,22 @@ function getStepContent(step) {
       return (
         <div>
           <div>Full Address: #73, Shri Durga Snacks</div>
+          {/* <a>Directions</a> */}
+          <a href="javascript:void(0)">More Info</a>
+        </div>
+      );
+    case 3:
+      return (
+        <div>
+          <div>Full Address: Dr Rajkumar,Ortho Dept., Fortis Hiranandani Hospital</div>
+          {/* <a>Directions</a> */}
+          <a href="javascript:void(0)">More Info</a>
+        </div>
+      );
+    case 4:
+      return (
+        <div>
+          <div>Full Address: #121, Shiv Shankar Temple</div>
           {/* <a>Directions</a> */}
           <a href="javascript:void(0)">More Info</a>
         </div>
@@ -107,12 +123,16 @@ class VerticalLinearStepper extends React.Component {
                   <Typography>{getStepContent(index)}</Typography>
                   <div className={classes.actionsContainer}>
                     <div>
-                      <Button disabled={activeStep === 0} onClick={this.handleBack} className={classes.button}>
+                      <Button color="primary" variant="contained" disabled={activeStep === 0} onClick={this.handleBack} className={classes.button}>
                         Back
                       </Button>
-                      <Button variant="contained" color="primary" onClick={this.handleNext} className={classes.button}>
-                        {activeStep === steps.length - 1 ? "Finish" : "Next"}
-                      </Button>
+                      {activeStep === steps.length - 1 ? (
+                        <div />
+                      ) : (
+                        <Button variant="contained" color="primary" onClick={this.handleNext} className={classes.button}>
+                          Next
+                        </Button>
+                      )}
                       <Link to="/map">
                         <Button variant="contained" color="secondary" className={classes.button}>
                           Navigate

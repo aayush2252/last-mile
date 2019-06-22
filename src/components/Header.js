@@ -32,7 +32,7 @@ function Header(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit" className={classes.grow}>
-            RouteOptimistic
+            Route Optimizer
           </Typography>
           {/* <Link to="/stoplist">
             <Button color="inherit">Stop List</Button>

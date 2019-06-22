@@ -155,7 +155,7 @@ class Insights extends Component {
           </div>
         </Paper>
 
-        <Paper style={{ padding: "20px", marginTop: "50px" }}>
+        {/* <Paper style={{ padding: "20px", marginTop: "50px" }}>
           <div style={{ textAlign: "right", marginBottom: "20px" }}>
             <Link to="/optimization">
               <Button variant="contained" color="secondary">
@@ -203,7 +203,7 @@ class Insights extends Component {
               </TableBody>
             </Table>
           </div>
-        </Paper>
+        </Paper> */}
 
         <Modal close={this.closeModal} openState={this.state.modalOpen} />
       </div>

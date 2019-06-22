@@ -25,6 +25,24 @@ export const type1 = [
     weight: "3200gm",
     timeslot: "3pm to 4pm",
     comments: "Handle with care"
+  },
+  {
+    address: "Fortis Hiranandani Hospital",
+    pin: "937647",
+    geoloc: "lat: 19.1421305, long: 72.9667101",
+    dimension: "115 * 90",
+    weight: "200gm",
+    timeslot: "11am to 3pm",
+    comments: "Handle with care"
+  },
+  {
+    address: "Shiv Shankar Temple",
+    pin: "126383",
+    geoloc: "lat: 19.2638124, long: 73.1121202",
+    dimension: "1105 * 900",
+    weight: "2500gm",
+    timeslot: "5pm to 6pm",
+    comments: "Handle with care"
   }
 ];
 
@@ -54,6 +72,15 @@ export const type2 = [
     dimension: "1350 * 2120",
     weight: "3000gm",
     timeslot: "4pm to 5pm",
+    comments: "Handle with care"
+  },
+  {
+    address: "DAMANI REALM SERVICES PVT. LTD. Taloja",
+    pin: "947822",
+    geoloc: "lat: 19.144526, long: 73.1316009",
+    dimension: "115 * 50",
+    weight: "100gm",
+    timeslot: "1:30pm to 3pm",
     comments: "Handle with care"
   }
 ];
