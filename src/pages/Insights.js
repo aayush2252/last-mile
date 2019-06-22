@@ -43,9 +43,13 @@ class Insights extends Component {
       <div className={classes.root}>
         <div style={{ marginTop: "85px" }}>
           <Accordions heading="Insights">
-            <h4>Remove 1 vehicle and increase the capacity to 98%</h4>
+            {/* <h4>Remove 1 vehicle and increase the capacity to 98%</h4>
             <h4>Cost Saving - Rs 100 per day</h4>
-            <h4>Duration - extra 1 hour per vehicle</h4>
+            <h4>Duration - extra 1 hour per vehicle</h4> */}
+            <img src="/assets/insight1.jpeg" height="250" width="250" />
+            <img src="/assets/insight2.jpeg" height="250" width="250" />
+            <img src="/assets/insight3.jpeg" height="250" width="250" />
+            <img src="/assets/insight4.jpeg" height="250" width="250" />
           </Accordions>
         </div>
 

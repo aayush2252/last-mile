@@ -7,6 +7,7 @@ import ReactCountdownClock from "react-countdown-clock";
 import GeoLocated from "../components/GeoLocated";
 import { Alert } from "react-bootstrap";
 import DeliverSlotModal from "../components/DeliverySlotModal";
+import { Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -70,7 +71,21 @@ class CustomerTracking extends React.Component {
 
     return (
       <div className={classes.root}>
+        <div style={{ textAlign: "left", marginBottom: "20px" }}>
+          {/* <Button variant="contained" color="primary">
+            Go Back{" "}
+          </Button>
+          <div style={{ marginLeft: "50px" }}> */}
+          <Link to="/stoplist/1">
+            <Button variant="contained" color="primary">
+              Go to next Route{" "}
+            </Button>
+          </Link>
+          {/* </div> */}
+        </div>
         <Paper style={{ padding: "10px" }}>
+          <h2>Delivery Address: #997, Thane Station(W)</h2>
+          <h3>Phone Number: 94885737382</h3>
           <Example>
             <Steps items={json} />
           </Example>

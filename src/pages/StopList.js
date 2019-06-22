@@ -115,7 +115,7 @@ class VerticalLinearStepper extends React.Component {
                       </Button>
                       <Link to="/map">
                         <Button variant="contained" color="secondary" className={classes.button}>
-                          Re-Optimize
+                          Navigate
                         </Button>
                       </Link>
                     </div>

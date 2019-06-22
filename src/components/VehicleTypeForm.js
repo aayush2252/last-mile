@@ -8,6 +8,7 @@ import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import { withRouter } from "react-router-dom";
+import CustomTimePicker from "../components/CustomTimePicker";
 
 const styles = theme => ({
   root: {
@@ -99,14 +100,18 @@ class VehicleTypeForm extends Component {
               />
             </div>
             <div>
-              <TextField
+              <FormControl className={classes.textField}>
+                <CustomTimePicker id="from" label="Time from" defaultValue="09:00" />
+                <CustomTimePicker id="to" label="Time to" defaultValue="18:00" />
+              </FormControl>
+              {/* <TextField
                 id="time"
                 label="Time Duration"
                 className={classes.textField}
                 value={this.state.time}
                 onChange={e => this.setState({ time: e.target.value })}
                 margin="normal"
-              />
+              /> */}
             </div>
 
             {/* <div style={{ marginTop: "20px" }}>

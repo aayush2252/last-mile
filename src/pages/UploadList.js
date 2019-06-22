@@ -35,7 +35,7 @@ class UploadList extends Component {
       <div>
         <div className="text-right" style={{ marginTop: "85px" }}>
           <Button variant="contained" color="primary" component="span" onClick={this.addForm}>
-            Add Vehicle Type
+            Add Vehicle
           </Button>
         </div>
         {this.state.loader && <Loader />}
@@ -44,7 +44,7 @@ class UploadList extends Component {
         ))}
 
         <div style={{ marginTop: "20px" }}>
-          <input accept="image/*" onChange={this.onFileUpload} style={{ display: "none" }} id="contained-button-file" multiple type="file" />
+          <input accept=".csv" onChange={this.onFileUpload} style={{ display: "none" }} id="contained-button-file" multiple type="file" />
           <label htmlFor="contained-button-file">
             <Button color="primary" variant="contained" component="span" style={{ position: "fixed", bottom: 0, left: 0, right: 0 }}>
               Upload StopList
