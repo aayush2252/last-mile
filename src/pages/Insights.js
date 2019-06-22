@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -9,6 +10,7 @@ import TableRow from "@material-ui/core/TableRow";
 import { type1, type2, type3 } from "../config/data";
 import Modal from "../components/Modal";
 import Accordions from "../components/Accordions";
+import { Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -55,6 +57,13 @@ class Insights extends Component {
 
         <Paper style={{ padding: "20px", marginTop: "50px" }}>
           <div style={{ textAlign: "right", marginBottom: "20px" }}>
+            <Link to="/optimization">
+              <Button variant="contained" color="secondary">
+                Edit Optimization
+              </Button>
+            </Link>
+          </div>
+          <div style={{ textAlign: "right", marginBottom: "20px" }}>
             <a href="javascript:void(0)" onClick={this.openModal}>
               Share with Driver
             </a>
@@ -98,6 +107,13 @@ class Insights extends Component {
 
         <Paper style={{ padding: "20px", marginTop: "50px" }}>
           <div style={{ textAlign: "right", marginBottom: "20px" }}>
+            <Link to="/optimization">
+              <Button variant="contained" color="secondary">
+                Edit Optimization
+              </Button>
+            </Link>
+          </div>
+          <div style={{ textAlign: "right", marginBottom: "20px" }}>
             <a href="javascript:void(0)" onClick={this.openModal}>
               Share with Driver
             </a>
@@ -140,6 +156,13 @@ class Insights extends Component {
         </Paper>
 
         <Paper style={{ padding: "20px", marginTop: "50px" }}>
+          <div style={{ textAlign: "right", marginBottom: "20px" }}>
+            <Link to="/optimization">
+              <Button variant="contained" color="secondary">
+                Edit Optimization
+              </Button>
+            </Link>
+          </div>
           <div style={{ textAlign: "right", marginBottom: "20px" }}>
             <a href="javascript:void(0)" onClick={this.openModal}>
               Share with Driver

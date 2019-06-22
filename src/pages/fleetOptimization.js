@@ -6,6 +6,7 @@ import { withStyles } from "@material-ui/core/styles";
 import SelectDropdown from "../components/SelectDropdown";
 import CustomTextField from "../components/CustomTextField";
 import { sequence } from "../actions/sequence";
+import { Link } from "react-router-dom";
 
 const styles = () => ({
   root: {
@@ -19,9 +20,9 @@ class fleetOptimization extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      optimizefor: "",
-      vehicle: "",
-      trafficaware: "",
+      optimizefor: "time",
+      vehicle: "car",
+      trafficaware: "disabled",
       locations: "",
       height: "",
       width: "",
@@ -155,8 +156,15 @@ class fleetOptimization extends Component {
     console.log("state", this.state);
     return (
       <div className={classes.root}>
+        <div style={{ textAlign: "right", marginTop: "85px" }}>
+          <Link to="/insight">
+            <Button variant="contained" color="secondary">
+              Back
+            </Button>
+          </Link>
+        </div>
         {showMap && <div id="here-map" style={{ width: "100%", height: "600px", background: "grey" }} />}
-        <Paper style={{ padding: "20px", marginTop: "85px" }}>
+        <Paper style={{ padding: "20px", marginTop: "20px" }}>
           <SelectDropdown
             name="optimizefor"
             label={"Optimize For"}
